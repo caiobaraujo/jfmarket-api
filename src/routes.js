@@ -27,7 +27,7 @@ router.get('/categories', AdsController.getCategories);
 
 router.post('/ad/add', Auth.private, AdsController.addAction);
 router.get('/ad/list', AdsController.getList);
-router.get('/ad/item/:id', AdsController.getItem);
+router.get('/ad/item', AdsController.getItem); //modificar depois esse endpoint para /ad/:id ;
 router.post('/ad/:id', Auth.private, AdsController.editAction);
 
 
