@@ -21,10 +21,10 @@ mongoose.connection.on('error', (error)=> {
 
 const server = express();
 
-server.use(cors());
+server.use(cors()); // configurar o cor ex: {origin: 'http://localhost:3000'}
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
-
+server.use(fileUpload());
 server.use(express.static(__dirname+'/public'));
 
 server.use('/', apiRoutes);

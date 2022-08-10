@@ -31,7 +31,15 @@ module.exports = {
     },
     addAction: async (req, res) => {
         let { title, price, priceneg, desc, cat, token } = req.body;
+        
         const user = await User.findOne({ token }).exec();
+
+        console.log("O req.body é: ", req.body);
+
+        if(!user){
+            res.json({ notallowwwwed: true });
+            return;
+        }
 
         if (!title || !cat) {
             res.json({ error: 'titulo e ou categoria nao foram informados' });
