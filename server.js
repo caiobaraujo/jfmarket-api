@@ -30,6 +30,6 @@ server.use(express.static(__dirname+'/public'));
 server.use('/', apiRoutes);
 
 
-server.listen(process.env.PORT, ()=> {
+server.listen(process.env.PORT || 5000, ()=> {
     console.log("Server is running on adress", process.env.BASE);
 });
